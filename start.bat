@@ -1,0 +1,1 @@
+start build\FXserver.exe +exec server.cfg

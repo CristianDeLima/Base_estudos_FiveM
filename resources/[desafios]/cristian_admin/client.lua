@@ -1,0 +1,22 @@
+RegisterNetEvent("cristian_admin:car", function(args)
+    local ped = PlayerPedId()
+    local pedCds = GetEntityCoords(ped)
+    local pedHeading = GetEntityHeading(ped)
+    local vehicleHash = GetHashKey(args[1])
+    repeat
+        RequestModel(vehicleHash)
+        Wait(100)
+    until HasModelLoaded(vehicleHash)
+
+    local vehicle = CreateVehicle(vehicleHash, pedCds, pedHeading, true)
+    SetPedIntoVehicle(ped, vehicle, -1)
+    SetVehRadioStation(GetVehiclePedIsIn(ped),"OFF")
+end)
+
+RegisterNetEvent("cristian_admin:dv", function(source)
+    local ped = PlayerPedId()
+    local vehicle = GetVehiclePedIsIn(ped, true)
+    print(vehicle)
+    SetEntityAsMissionEntity(vehicle, true, true)
+    DeleteVehicle(vehicle)
+end)

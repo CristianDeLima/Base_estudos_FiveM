@@ -1,0 +1,17 @@
+div { border: 0; outline: 0; vertical-align: baseline; background: transparent; margin: 0; padding: 0; }
+:focus { outline: 0; }
+::selection { background: transparent; }
+
+#actionmenu {
+	top: 50%;
+	left: 50%;
+	display: none;
+	position: fixed;
+	transform: translate(-50%,-50%);
+}
+
+input {
+	height: 50px;
+	width: 500px;
+	margin-top: 100px;
+}
